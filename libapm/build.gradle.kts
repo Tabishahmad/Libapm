@@ -48,8 +48,8 @@ afterEvaluate {
     publishing {
         publications {
             register("mavenJava",MavenPublication::class.java){
-                groupId = "com.github.Libapm"
-                artifactId = "tabish"
+                groupId = "com.github.Tabishahmad"
+                artifactId = "Libapm"
                 version = "1.0.0"
             }
         }
