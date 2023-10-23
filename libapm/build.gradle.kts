@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-//    id("maven-publish")
+    id("maven-publish")
 }
 
 android {
@@ -34,13 +34,6 @@ android {
 
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//
-//        }
-//    }
-//}
 
 dependencies {
 
