@@ -39,25 +39,28 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
-    implementation ("io.sentry:sentry-android:6.32.0")
+    implementation("io.sentry:sentry-android:6.32.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                groupId = "com.github.Tabishahmad"
-                artifactId = "Libapm"
-                version = "1.0.0"
-                pom {
-                    description
-                }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.Tabishahmad"
+            artifactId = "Libapm"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
             }
-//            register("mavenJava",MavenPublication::class.java) {
-//
-//            }
+     }
+    }
+    repositories {
+        maven {
+            name = "Libapm"
+            url = uri("${project.buildDir}/Libapm")
         }
     }
 }
