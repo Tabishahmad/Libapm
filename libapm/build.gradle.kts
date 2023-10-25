@@ -44,7 +44,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
-
 publishing {
     publications {
         register<MavenPublication>("release") {
@@ -55,12 +54,31 @@ publishing {
             afterEvaluate {
                 from(components["release"])
             }
-     }
+        }
     }
     repositories {
-        maven {
+        maven{
             name = "Libapm"
             url = uri("${project.buildDir}/Libapm")
         }
     }
 }
+//publishing {
+//    publications {
+//        register<MavenPublication>("release") {
+//            groupId = "com.github.Tabishahmad"
+//            artifactId = "Libapm"
+//            version = "1.0.0"
+//
+//            afterEvaluate {
+//                from(components["release"])
+//            }
+//     }
+//    }
+//    repositories {
+//        maven {
+//            name = "Libapm"
+//            url = uri("${project.buildDir}/Libapm")
+//        }
+//    }
+//}
