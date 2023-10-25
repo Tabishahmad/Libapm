@@ -47,7 +47,7 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            register("mavenJava",MavenPublication::class.java) {
+            create<MavenPublication>("release") {
                 groupId = "com.github.Tabishahmad"
                 artifactId = "Libapm"
                 version = "1.0.0"
@@ -55,6 +55,9 @@ afterEvaluate {
                     description
                 }
             }
+//            register("mavenJava",MavenPublication::class.java) {
+//
+//            }
         }
     }
 }
